@@ -89,8 +89,7 @@ The web app ships with Notesnook's official servers pre-configured. Before creat
 ---
 
 ## External Access
-
-The stack exposes host ports that any router can point to. **The stack itself doesn't care what's in front of it.**
+Expose via a tunnel (Cloudflare, Pangolin, Tailscale) and you can access outside your netowrk. 
 
 ### Service → Port Map
 
@@ -102,37 +101,6 @@ The stack exposes host ports that any router can point to. **The stack itself do
 | `sse.yourdomain.com` | `sse-server` | `7264` |
 | `mono.yourdomain.com` | `monograph-server` | `6264` |
 | `s3.yourdomain.com` | `notesnook-s3` | `9000` |
-
-### Option A — Different Docker network (ip:port)
-
-Point your router at `http://UNRAID_IP:PORT` for each service.
-
-**Pangolin example** — create a resource in the Pangolin dashboard for each:
-- `notes.yourdomain.com` → `http://10.10.1.X:3010`
-- `auth.yourdomain.com` → `http://10.10.1.X:8264`
-- `sync.yourdomain.com` → `http://10.10.1.X:5264`
-- `sse.yourdomain.com` → `http://10.10.1.X:7264`
-- `mono.yourdomain.com` → `http://10.10.1.X:6264`
-- `s3.yourdomain.com` → `http://10.10.1.X:9000`
-
-Works the same for Traefik, Nginx Proxy Manager, Cloudflare Tunnel, etc.
-
-### Option B — Same Docker network (container name)
-
-If your router runs on the same host, add its network to `docker-compose.yml`:
-
-```yaml
-networks:
-  notesnook:
-    name: notesnook
-    driver: bridge
-  your-router-network:       # e.g. pangolin, traefik
-    external: true
-```
-
-Then add `your-router-network` to each service that needs external exposure, and point your router at `http://app:80`, `http://notesnook-server:5264`, etc.
-
----
 
 ## Backup & Restore
 
