@@ -1,5 +1,16 @@
 # Notesnook — Self-Hosted Stack
 
+[![Notesnook Server](https://img.shields.io/badge/notesnook--server-latest-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/streetwriters/notesnook-sync)
+[![App (web)](https://img.shields.io/badge/notesnook--web-latest-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/thelab/notesnook-web)
+[![MongoDB](https://img.shields.io/badge/MongoDB-7.0.30-47A248?logo=mongodb&logoColor=white)](https://hub.docker.com/_/mongo)
+[![MinIO](https://img.shields.io/badge/MinIO-2025--09--07-000000?logo=minio&logoColor=white)](https://hub.docker.com/r/minio/minio)
+[![MinIO MC](https://img.shields.io/badge/MinIO--MC-2025--08--13-000000?logo=minio&logoColor=white)](https://hub.docker.com/r/minio/mc)
+[![Identity Server](https://img.shields.io/badge/identity--server-latest-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/streetwriters/identity)
+[![SSE Server](https://img.shields.io/badge/sse--server-latest-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/streetwriters/sse)
+[![Monograph](https://img.shields.io/badge/monograph-latest-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/streetwriters/monograph)
+[![Autoheal](https://img.shields.io/badge/autoheal-latest-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/willfarrell/autoheal)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-FF5E5B?logo=kofi&logoColor=white)](https://ko-fi.com/snuffomega)
+
 A complete self-hosted [Notesnook](https://notesnook.com) deployment. All data stays on your server; notes are end-to-end encrypted on your devices. This is a custom stack built on the official Streetwriters backend images with a locally-built web frontend.
 
 ## Services
@@ -191,3 +202,9 @@ Server URLs are stored in browser localStorage — they are not baked into the i
 
 **MinIO "attachments" bucket missing**
 Re-run setup: `docker compose run --rm setup-s3`
+
+---
+
+If this helped you out, consider [buying me a coffee](https://ko-fi.com/snuffomega).
+
+[![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/snuffomega)
